@@ -1,6 +1,6 @@
-# chimchar-pi
+<img height="100" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/390.png" align="right" />
 
-<img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/390.png" align="right" />
+# chimchar-pi
 
 This is a hardware platform I use for my pi-based projects.
 
@@ -21,11 +21,14 @@ I Have this hardware, so I designed it around this, but it should work with othe
 
 For the above combo of hardware, you will need:
 
-- the latest rasperry pi os lite. Use rasperry pi imager, choose "raspberry pi os lite (32-bit)"
-- my [GPi patches](gpi-pizero2w/boot)
-- [install retropie](https://retropie.org.uk/docs/Manual-Installation/) Although this is a great way to play retro-games, it's also a nice menu interface for pi that only has controller input, so we use this for the UI.
+- the latest rasperry pi os lite. Use rasperry pi imager, choose "raspberry pi os lite (32-bit)", make sure to click gear icon and add wifi, ssh & user
+- add my [GPi patches](gpi-pizero2w/boot)
+- add `logo.nologo` to /boot/cmdline.txt
+- install safe shutdown: `wget -O - "https://raw.githubusercontent.com/RetroFlag/retroflag-picase/master/install_gpi.sh" | sudo bash`
+- [install retropie](https://retropie.org.uk/docs/Manual-Installation/). Make sure to also [start it at boot](https://retropie.org.uk/docs/FAQ/#how-do-i-boot-to-the-desktop-or-kodi) Although this is a great way to play retro-games, it's also a nice menu interface for pi that only has controller input, so we use this for the UI.
+- `sudo raspi-config nonint do_boot_wait 0` to make it boot a bit faster
 
 Additionally:
 
 - boot quicker into emulationstation
-- disable wait-for-network
+- [nice mods](https://www.youtube.com/watch?v=jOZ-ZQHMOII)
