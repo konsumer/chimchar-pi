@@ -25,10 +25,29 @@ For the above combo of hardware, you will need:
 - add my [GPi patches](gpi-pizero2w/boot)
 - add `logo.nologo` to /boot/cmdline.txt
 - install safe shutdown: `wget -O - "https://raw.githubusercontent.com/RetroFlag/retroflag-picase/master/install_gpi.sh" | sudo bash`
-- [install retropie](https://retropie.org.uk/docs/Manual-Installation/). Make sure to also [start it at boot](https://retropie.org.uk/docs/FAQ/#how-do-i-boot-to-the-desktop-or-kodi) Although this is a great way to play retro-games, it's also a nice menu interface for pi that only has controller input, so we use this for the UI.
+- install emulationstation. Although this is a great way to play retro-games, it's also a nice menu interface for pi that only has controller input, so we use this for the UI. I couldn't find a good deb, so I just built it in docker to speed it up.
 - `sudo raspi-config nonint do_boot_wait 0` to make it boot a bit faster
 
 Additionally:
 
 - boot quicker into emulationstation
 - [nice mods](https://www.youtube.com/watch?v=jOZ-ZQHMOII)
+
+
+### emulationstation
+
+You can build an up-to-date version in docker on your desktop, so it goes faster. I basically followed [this](https://emulationstation.org/gettingstarted.html). You need qemu-
+
+```
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+docker run -it --rm -v $(pwd):/src node sh
+
+sudo apt-get install -y libsdl2-dev libboost-system-dev libboost-filesystem-dev libboost-date-time-dev libboost-locale-dev libfreeimage-dev libfreetype6-dev libeigen3-dev libcurl4-openssl-dev libasound2-dev libgl1-mesa-dev build-essential cmake git
+
+git clone https://github.com/Aloshi/EmulationStation
+cd EmulationStation
+git checkout unstable
+cmake .
+make
+make package
+```
