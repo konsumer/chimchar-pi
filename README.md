@@ -42,12 +42,11 @@ You can build an up-to-date version in docker on your desktop, so it goes faster
 docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 docker run -w /src -v $(pwd):/src -it --rm raspbian/desktop bash
 
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 sudo apt-get install -y libsdl2-dev libboost-system-dev libboost-filesystem-dev libboost-date-time-dev libboost-locale-dev libfreeimage-dev libfreetype6-dev libeigen3-dev libcurl4-openssl-dev libasound2-dev libgl1-mesa-dev build-essential cmake git
 
 git clone https://github.com/Aloshi/EmulationStation
 cd EmulationStation
-git checkout unstable
 cmake .
 make
 make package
