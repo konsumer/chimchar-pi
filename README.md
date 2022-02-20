@@ -36,7 +36,7 @@ Additionally:
 
 ### emulationstation
 
-You can build an up-to-date version in docker on your desktop, so it goes faster. I basically followed [this](https://emulationstation.org/gettingstarted.html). You need qemu-
+You can build an up-to-date version in docker on your desktop, so it goes faster. I basically followed [this](https://emulationstation.org/gettingstarted.html).
 
 ```
 docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
