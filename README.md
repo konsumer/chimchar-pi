@@ -6,7 +6,7 @@ This is a hardware platform I use for my pi-based projects.
 
 Here are some projects that use it:
 
-- [chimchirpi](https://github.com/konsumer/chimchirp) - A puredata-based synthesizer
+- [chimchirpi](https://github.com/konsumer/chimchirpi) - A puredata-based synthesizer
 - [pakemon](https://github.com/notnullgames/pakemon) - A network/radio hacking platform that feels like a videogame!
 
 ## hardware
